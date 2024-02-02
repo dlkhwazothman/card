@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Valentines Day Card</title>
+        <link rel="stylesheet" href="style.css">
+        <link rel="icon" href="img/heart.gif">
+    </head>
+
+    <body>
+        <div class="bag">
+            <img class="bagg" src="img/bag.png">
+            <img class="card" src="img/card.png">
+
+            <div class="cardgenerate">
+                <input id="toName" type="text" class="tonamee" placeholder="From">
+                <br> <br>
+                <input id="fromName" type="text" class="fromnamee" placeholder="To">
+                <br>
+                <button class="btn" id="mybtn" type="button" onclick="valentinescard()">Generate Card</button>
+            </div>
+
+            <h2 class="n1" id="name2"> Name </h2>
+            <h2 class="n2" id="name1"> Name 2</h2>
+            <div id="heart">&#10084;</div>
+            <div id="message">Happy Valentine's Day, <span id="name">my love</span>!</div>
+            <p class="qoutss" onclick="valentinescard()" id="qouts">The words I want to tell you</p>
+            <button class="btn2" onclick="window.print()">Print this page</button>
+
+        </div>
+
+    </body>
+    <script>
+        function valentinescard() {
+            const toName = document.getElementById('toName');
+            const fromName = document.getElementById('fromName');
+            const firstN = document.getElementById('name1');
+            const SecondN = document.getElementById('name2');
+            const myqouts = document.getElementById('qouts');
+            const nameinput = document.getElementById('name');
+
+            // Directly set text content and innerHTML
+            myqouts.textContent = "You are the most important person in my life and I don't know what I would do without you.";
+            myqouts.innerHTML += "I love you more than words can express and I am so grateful to have you by my side.";
+
+            if (toName.value.trim() !== '' && fromName.value.trim() !== '') {
+                firstN.textContent = toName.value;
+                SecondN.textContent = fromName.value;
+                nameinput.textContent = fromName.value;
+            } else {
+                firstN.textContent = 'my love';
+                SecondN.textContent = 'my love';
+            }
+
+            firstN.style.fontFamily = '"apricot", serif';
+            SecondN.style.fontFamily = '"apricot", serif';
+
+            // myqouts.style.fontFamily = '"apricot", serif';
+
+        }
+
+    </script>
+
+</html>
